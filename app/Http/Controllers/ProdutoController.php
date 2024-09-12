@@ -17,15 +17,11 @@ class ProdutoController extends Controller
     {
        // return "index";
 
-    //    $produtos = Produto::all();
-    //    return dd($produtos);
+       $produtos = Produto::paginate(3);
+       return view("site.home", compact('produtos'));
 
-    $nome = "rodrigo";
-    $idade = 28;
-    $html = "<h1>Olá eu sou H1</H1>";
-
-   // return view('site.empresa', ['nome' => $nome, 'idade' => $idade, 'html' => $html]);
-    return view('site.home', compact('nome', 'idade', 'html'));
+    
+    
 
     }
 
